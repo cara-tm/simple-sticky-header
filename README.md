@@ -26,8 +26,17 @@ Note: IDs "menu" & "header" are needed.
 
 Call this script with its `function fixednav()` and set options as needed:
 
-    fixednav({down:50, up:200, delay:70});
+    fixednav({id:"outer-id", nav:"nav-id", distance:40, down:50, up:200, delay:70});
 
-Check out: [this online demo (new version)](http://jsfiddle.net/gtcL1cmm/7/).
+## Attributes
+
+    id: ID of the outer element of the menu
+    nav: ID of the menu element
+    distance: (optional) distance in pixel from the top of the browser's window where to apply the fixed position. Default: the menu element height.
+    down: (optional) additional down distance in pixel when to apply the fixed position. Default: 0.
+    up: (optional) additional up distance in pixel when to remove the fixed position. Default: 0.
+    delay: (optional) delay in ms. Default: 70 ms.
+
+Check out: [this online demo (new version)](http://jsfiddle.net/gtcL1cmm/9/).
 
 Check out: [this online demo (old version)](http://jsfiddle.net/gtcL1cmm/2).
