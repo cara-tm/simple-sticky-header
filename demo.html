@@ -4,7 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
 <title>Simple JS sticky Header</title>
-
+<script>
+document.documentElement.className='js '+(!document.createElementNS||!document.createElementNS('http://www.w3.org/2000/svg','svg').createSVGRect?'nosvg':'svg');
+</script>
 <style>
 html,
     body {height: 100%}
@@ -12,6 +14,7 @@ body{
     margin: 0;
     padding: 0;
     font: normal normal normal 62.5%/1 sans-serif;
+     background: #eee;
     scroll-behavior: smooth
 }
 .wrapper {
@@ -64,31 +67,109 @@ body{
     color: #333
 }
 .content {
-    position: relative;
     font-size: 1.5em
+}
+.scroll-down {
+    display: block;
+    position: relative;
+    top: 15em;
+    left: 50%;
+    width: 32px;
+    height: 32px;
+    margin: 0 0 0 -16px;
+    text-decoration: none
+}
+.svg .scroll-down {
+    border: 2px solid #424242;
+    border-radius: 50%;
+
+    -webkit-animation: bounce 2s infinite 2s;
+    animation: bounce 2s infinite 2s;
+    -webkit-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in
+}
+@-webkit-keyframes bounce {
+        0%,
+        100%,
+        20%,
+        50%,
+        80% {
+            -webkit-transform: translateY(0);
+                    transform: translateY(0);
+        }
+        40% {
+            -webkit-transform: translateY(-10px);
+                    transform: translateY(-10px);
+        }
+        60% {
+            -webkit-transform: translateY(-5px);
+                    transform: translateY(-5px);
+        }
+}
+@keyframes bounce {
+        0%,
+        100%,
+        20%,
+        50%,
+        80% {
+            -webkit-transform: translateY(0);
+                    transform: translateY(0);
+        }
+        40% {
+            -webkit-transform: translateY(-10px);
+                    transform: translateY(-10px);
+        }
+        60% {
+            -webkit-transform: translateY(-5px);
+                    transform: translateY(-5px);
+        }
+}
+.svg .scroll-down:after {
+    display: block;
+    position: relative;
+    top: 6px;
+    bottom: 2px;
+    left: 50%;
+    content: '';
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    width: 12px;
+    height: 11px;
+    margin: 0 0 0 -7px;
+    border: 2px solid #424242;
+    border-width: 0px 0 2px 2px
 }
 .content span {
     position: absolute;
-    top: 3.5em;
+    top: 5em;
     width: 100%;
     display: block;
     text-align: center;
-    color: #ddd;
+    color: #aaa;
     font-size: 3em
 }
+.svg .content span {display: none}
 .content p {
     padding: 0 .5em;
-    line-height: 20em
+    color: #aaa;
+    line-height: 20em;
+    text-shadow: 0 1px 1px #fff
 }
 .gotop {
+    display: table-cell;
+    display: inline-block;
     position: absolute;
     top: -2em;
     right: 1em;
+    width: 3em;
+    height: 2em;
     text-decoration: none;
     color: #333;
-    font-size: smaller
+    font-size: smaller;
+    cursor: pointer
 }
-
 </style>
 </head>
 
@@ -102,7 +183,7 @@ body{
     </div> <!-- /header -->
 
     <div class="content">
-        <span>↨</span>
+        <a href="#nogo" class="scroll-down"><span>↨</span></a>
         <p class="txt-center">Please, scroll down</p>
     </div>
     
@@ -123,4 +204,5 @@ var fixednav=function(o){"use strict";var didScroll=!1,nav=document.getElementBy
 // Loading with options:
 fixednav({id:"menu",nav:"header",distance:39,down:-10, up:30, delay:70});
 </script>
+
 </body></html>
