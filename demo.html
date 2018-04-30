@@ -13,8 +13,8 @@ html,
 body{
     margin: 0;
     padding: 0;
+    background: #eee;
     font: normal normal normal 62.5%/1 sans-serif;
-     background: #eee;
     scroll-behavior: smooth
 }
 .wrapper {
@@ -34,14 +34,21 @@ body{
     background: #171717;
     color: #fff;
     font-size: 2em;
-    line-height: 1.6em
+    line-height: 1.833em
 }
-.header{animation: all 1s ease-in-out ;}
+.header{
+	height: 4.23em;
+	-webkit-animation: all 1s ease-in-out;
+	animation: all 1s ease-in-out
+}
 .header-inner, .footer {
     position: relative;
     width: 100%;
-    text-align: center
+    text-align: center;
+	font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'HelveticaNeue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+	font-weight: 300
 }
+.header-inner {padding: 1.2em 0}
 .content {height: 1600px}
 .txt-center {text-align: center}
 .fixed {
@@ -50,12 +57,15 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    height: 3em;
+    height: auto;
+	padding: .6em 0 .6em 1em;
     background: #fff;
     background: rgba(255, 255, 255, .8);
     border-bottom: 1px solid #ddd;
+	text-align: left;
     color: #333;
-    font-size: 1.2em;
+    line-height: 1em;
+	font-size: smaller;
     -webkit-shadow: 0px 3px 5px rgba(0, 0, 0, .4);
     -moz-shadow: 0px 3px 5px rgba(0, 0, 0, .4);
     -o--shadow: 0px 3px 5px rgba(0, 0, 0, .4);
@@ -82,6 +92,7 @@ body{
 .svg .scroll-down {
     border: 2px solid #424242;
     border-radius: 50%;
+    box-shadow: shadow: 0 1px 1px #fff;
 
     -webkit-animation: bounce 2s infinite 2s;
     animation: bounce 2s infinite 2s;
@@ -143,7 +154,7 @@ body{
 }
 .content span {
     position: absolute;
-    top: 5em;
+    top: -.3em;
     width: 100%;
     display: block;
     text-align: center;
@@ -170,14 +181,15 @@ body{
     font-size: smaller;
     cursor: pointer
 }
+
 </style>
 </head>
 
 <body>
 <div class="wrapper">
 
-    <div class="header" id="menu">
-        <div class="header-inner" id="header">
+    <div class="header" id="header">
+        <div class="header-inner" id="menu">
             Header
         </div>
     </div> <!-- /header -->
@@ -202,7 +214,6 @@ body{
 /*! Simple fixed nav on scroll down based on #header element's height. */
 var fixednav=function(o){"use strict";var didScroll=!1,nav=document.getElementById(o.id),header=document.getElementById(o.nav);if("undefined"==typeof o.up)o.up=0;if("undefined"==typeof o.down)o.down=0;if("undefined"==typeof o.delay)o.delay=70;window.onscroll=doOnScroll;function doOnScroll(){didScroll=true;}setInterval(function(){if(didScroll){didScroll=0;var top=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop,height=(o.distance||header.clientHeight);if(top>height-o.down){addClass("fixed",nav);}else if(top<=height-o.up){nav.className=nav.className.replace(" fixed","");}}},o.delay);function addClass(a,s){var c=s.className;if(-1==c.indexOf(a)&&""!==c&&(a=" "+a))s.className=c+a;}};
 // Loading with options:
-fixednav({id:"menu",nav:"header",distance:39,down:-10, up:30, delay:70});
+fixednav({id: "menu", nav: "header", distance: 60, down: -20, up: 15, delay: 70});
 </script>
-
 </body></html>
