@@ -6,13 +6,13 @@ Pure vanilla javascript with no dependencies. Add a "fixed" class on an identifi
 
 ## HTML markup
 
-    <div class="header-outer" id="menu">
+    <div class="header-outer" id="header-outer">
       <div class="header-inner" id="header">
         Header
       </div>
     </div>
 
-Note: IDs "menu" & "header" are needed.
+Note: IDs `header-outer` & `header` are needed (can be changed for other identifiants, see **options** below).
 
 ## Options
 
@@ -30,9 +30,9 @@ Call this script with its `function fixednav()` and set options as needed:
 
 ## Attributes
 
->    `id`: ID of the outer element of the menu.
+>    `id`: ID of the inner element of the header.
 > 
->    `nav`: ID of the menu element.
+>    `outer`: ID of the outer element of the header.
 > 
 >    `distance`: (optional) distance in pixel from the top of the browser's window where to apply the fixed position. Default: the menu element height.
 > 
