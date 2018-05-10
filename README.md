@@ -26,7 +26,7 @@ Note: IDs `header-outer` & `header` are needed (can be changed for other identif
 
 Call this script with its `function fixednav()` and set options as needed:
 
-    fixednav({id:"outer-id", nav:"nav-id", distance:40, down:50, up:200, delay:70});
+    fixednav({id:"inner-id", outer:"outer-id", distance:40, down:50, up:200, delay:70});
 
 ## Attributes
 
