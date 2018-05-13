@@ -1,6 +1,6 @@
 # simple-sticky-header
 
-Very simple javascript &amp; CSS fixed header on scroll down based on an element's height (IE 6+ minimum).
+Very simple javascript &amp; CSS fixed header on scroll down based on an element's height (IE 6+ minimum): [CodePen demo](https://codepen.io/cara-tm/pen/OZEOby).
 
 Pure vanilla javascript with no dependencies. Add a "fixed" class on an identified div element (#header) which allow to fix it when visitors scroll down on a web page. Calculations are made automaticaly based on the height of this #header. Simply copy/past: you just need to add a CSS declaration into your styles file (i.e.: .fixed{position:fixed}).
 
